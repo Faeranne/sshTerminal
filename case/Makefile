@@ -1,11 +1,11 @@
 # explicit wildcard expansion suppresses errors when no files are found
 include $(wildcard *.deps)
 
-.PHONY: clean stl png
+.PHONY: clean stl png collect
 
 BUILD=build
 
-PARTS = screenBorder
+PARTS = screenBorder screenLid baseBottom baseLid
 OBJ = $(patsubst %,$(BUILD)/%.stl, $(PARTS))
 IMG = $(patsubst %,$(BUILD)/%.png, $(PARTS))
 
@@ -15,9 +15,11 @@ stl: $(OBJ)
 png: $(IMG)
 
 build/%.stl: %.scad
+	mkdir -p build
 	openscad -o $@ -D res=10 $^
 
 build/%.png: %.scad
+	mkdir -p build
 	openscad -o $@ -D res=100 $^
 
 clean:
