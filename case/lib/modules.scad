@@ -1,4 +1,4 @@
-res=100;
+res=10;
 if(resolution=="dev"){
   res=5;
 }
