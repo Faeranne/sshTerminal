@@ -1,6 +1,3 @@
 [submodule "software/busybox"]
 	path = software/busybox
 	url = git://git.busybox.net/busybox/
-[submodule "software/kernel"]
-	path = software/kernel
-	url = https://github.com/adafruit/adafruit-raspberrypi-linux.git
